@@ -100,4 +100,34 @@ class Wp_Cbf_Admin {
 
 	}
 
+	/**
+	 *
+	 * admin/class-wp-cbf-admin.php - Don't add this
+	 *
+	 **/
+
+	/**
+	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
+	 *
+	 * @since    1.0.0
+	 */
+
+	public function add_plugin_admin_menu() {
+
+		/*
+		 * Add a settings page for this plugin to the Settings menu.
+		 *
+		 * NOTE:  Alternative menu locations are available via WordPress administration menu functions.
+		 *
+		 *        Administration Menus: http://codex.wordpress.org/Administration_Menus
+		 *
+		 */
+		add_options_page( 'WP Cleanup and Base Options Functions Setup', 'WP Cleanup', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page')
+		);
+	}
+	/**
+	 * Add settings action link to the plugins page.
+	 *
+	 * @since    1.0.0
+	 */
 }
